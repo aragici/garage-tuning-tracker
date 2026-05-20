@@ -2,7 +2,7 @@
 
 A web-based full-stack CRUD application developed as a course project for **System Analysis and Design (SAD)**. It allows users to register, manage vehicles in their garage, and keep a log of installed tuning modifications/parts with real-time dynamic rendering.
 
----
+--- 
 
 ## 🚀 Features
 
