@@ -1,0 +1,250 @@
+:root {
+    --bg-color: #0a0a0c;
+    --card-bg: #121216;
+    --text-color: #f0f0f5;
+    --text-muted: #707080;
+    --neon-blue: #00f0ff;
+    --neon-blue-hover: rgba(0, 240, 255, 0.2);
+    --neon-red: #ff0055;
+    --neon-red-hover: rgba(255, 0, 85, 0.2);
+    --input-bg: #181822;
+    --border-color: #252530;
+}
+
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 240, 255, 0.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0, 240, 255, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 650px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #fff;
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Üst kısımdaki neon şerit */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-red));
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--neon-blue);
+    text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+input {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.btn-group {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    flex: 1;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Mavi Neon Buton */
+.btn-primary {
+    background-color: transparent;
+    color: var(--neon-blue);
+    border-color: var(--neon-blue);
+    box-shadow: inset 0 0 4px var(--neon-blue), 0 0 4px var(--neon-blue);
+}
+
+.btn-primary:hover {
+    background-color: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+/* İkincil / Gri Buton */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--border-color);
+    color: #fff;
+}
+
+/* Kırmızı Neon Buton (Silme ve Çıkış) */
+.btn-danger {
+    background-color: transparent;
+    color: var(--neon-red);
+    border-color: var(--neon-red);
+    box-shadow: inset 0 0 4px var(--neon-red), 0 0 4px var(--neon-red);
+}
+
+.btn-danger:hover {
+    background-color: var(--neon-red);
+    color: #fff;
+    box-shadow: 0 0 15px var(--neon-red);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* Düzenlenen Üst Kısım ve Logout Konumu */
+.header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.header-actions h2 {
+    margin-bottom: 0;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.logout-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    flex: none;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 30px 0;
+}
+
+.error-msg {
+    color: var(--neon-red);
+    font-size: 0.95rem;
+    margin-top: 15px;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(255, 0, 85, 0.3);
+}
+
+.car-grid {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.car-item {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    padding: 18px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.3s;
+}
+
+.car-item:hover {
+    border-color: var(--neon-blue);
+}
+
+.car-info {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.car-info span {
+    color: var(--text-muted);
+    font-weight: normal;
+    font-size: 0.95rem;
+    margin-left: 8px;
+}

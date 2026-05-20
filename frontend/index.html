@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Tuning Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="checkAuth()">
+    <div class="container">
+        <header>
+            <h1>🔧 Garage Tuning Tracker</h1>
+        </header>
+
+        <div id="auth-section" class="card">
+            <h2>Sign In / Register</h2>
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="register()">Register</button>
+                <button class="btn btn-primary" onclick="login()">Login</button>
+            </div>
+            <p id="auth-message" class="error-msg"></p>
+        </div>
+
+        <div id="garage-section" class="card" style="display: none;">
+            <div class="header-actions">
+                <h2>My Garage</h2>
+                <button class="btn btn-danger logout-btn" onclick="logout()">Logout</button>
+            </div>
+            
+            <div class="add-car-form">
+                <h3>Add New Vehicle</h3>
+                <div class="form-grid">
+                    <input type="text" id="brand" placeholder="Brand (e.g. Renault)">
+                    <input type="text" id="model" placeholder="Model (e.g. Clio)">
+                    <input type="number" id="year" placeholder="Year (e.g. 2024)">
+                </div>
+                <button class="btn btn-primary btn-block" onclick="addCar()">Add to Garage</button>
+            </div>
+
+            <hr class="divider">
+
+            <h3>Vehicles</h3>
+            <ul id="car-list" class="car-grid"></ul>
+        </div>
+
+        <div id="edit-car-section" class="card" style="display: none; border-color: var(--neon-blue);">
+            <h3>Edit Vehicle</h3>
+            <input type="hidden" id="edit-car-id">
+            <div class="form-grid" style="margin-bottom: 20px;">
+                <input type="text" id="edit-brand" placeholder="Brand">
+                <input type="text" id="edit-model" placeholder="Model">
+                <input type="number" id="edit-year" placeholder="Year">
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="closeEditCar()">Cancel</button>
+                <button class="btn btn-primary" onclick="submitEditCar()">Save Changes</button>
+            </div>
+        </div>
+
+        <div id="parts-section" class="card" style="display: none; border-color: var(--neon-blue);">
+            <div class="header-actions">
+                <h3 id="selected-car-title">Modifications for Vehicle</h3>
+                <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.85rem;" onclick="closeParts()">Close</button>
+            </div>
+            
+            <div class="add-part-form" style="margin-bottom: 20px;">
+                <div class="form-grid">
+                    <input type="text" id="part-name" placeholder="Part Name (e.g. Spoiler, Rims)">
+                    <input type="number" id="part-cost" placeholder="Cost ($)">
+                    <input type="date" id="part-date">
+                </div>
+                <button class="btn btn-primary btn-block" id="add-part-btn">Install Part</button>
+            </div>
+
+            <ul id="part-list" class="car-grid"></ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
