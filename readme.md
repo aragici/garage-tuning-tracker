@@ -11,7 +11,7 @@
 - [cite_start]**RESTful Architecture**: Follows clean REST endpoint routing standards[cite: 8].
 - [cite_start]**Single-Page Application**: Implemented strictly with Vanilla HTML5, CSS3 (Neon-Carbon UI), and asynchronous JavaScript (`fetch`)[cite: 9, 25, 36, 37]. [cite_start]No frameworks used[cite: 25, 38].
 - [cite_start]**Interactive Documentation**: Integrated fully interactive Swagger UI for instant API exploration[cite: 46, 47].
-- [cite_start]**Robustness**: Unit-tested business logic ensuring zero runtime configuration faults.
+- **Robustness**: Unit-tested business logic ensuring zero runtime configuration faults.
 
 ---
 
@@ -19,15 +19,15 @@
 
 - [cite_start]**Frontend**: Vanilla HTML, CSS, JavaScript (Asynchronous API architecture)[cite: 25].
 - [cite_start]**Backend**: Node.js, Express.js framework[cite: 26].
-- [cite_start]**Database**: SQLite3 (relational local file store)[cite: 27].
-- [cite_start]**Testing**: Jest.
+- [cite_start]**Data Layer**: SQLite3 (relational local file store)[cite: 27].
+- **Testing**: Jest.
 - [cite_start]**API Spec**: Swagger UI / OpenAPI 3.0[cite: 46, 47].
 
 ---
 
 ## 📦 Local Setup Instructions
 
-[cite_start]Follow these exact steps to reproduce and launch the application environment locally:
+[cite_start]Follow these exact steps to reproduce and launch the application environment locally[cite: 43, 44]:
 
 ### 1. Clone & Project Traversal
 Ensure you are operating inside the backend environment directory:
